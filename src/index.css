@@ -1,13 +1,82 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    font-family: Helvetica, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+    font-size: 32px;
+    line-height: 34px;
+    font-weight: bold;
+    padding: 0 0 20px 0;
+}
+
+h2 {
+    font-size: 28px;
+    line-height: 30px;
+    padding: 0 0 10px 0;
+}
+
+li {
+    padding: 5px 0;
+    cursor: pointer;
+    display: block;
+}
+
+.inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.marker {
+    fill: green;
+}
+
+.top__bar {
+    height: 300px;
+}
+
+.tag {
+    border: 1px solid green;
+    color: green;
+    font-weight: lighter;
+    border-radius: 3px;
+    padding: 3px 8px;
+    margin-right: 10px;
+}
+
+.tag--active {
+    border: 1px solid green;
+    color: green;
+}
+
+.tag--stopped {
+    border: 1px solid red;
+    color: red;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    max-height: 200px;
+    overflow: auto;
+}
+
+.item {
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.item strong,
+.item span {
+    line-height: 30px;
+}
+
+.action {
+    margin: 10px 0 0 0;
+}
+
+.action button {
+    margin-right: 10px;
 }
