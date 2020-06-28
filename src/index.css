@@ -21,6 +21,11 @@ li {
     display: block;
 }
 
+#root {
+    display: flex;
+
+}
+
 .inner {
     width: 100%;
     max-width: 1200px;
@@ -32,14 +37,15 @@ li {
     fill: green;
 }
 
-.top__bar {
-    height: 300px;
+.left__bar {
+    width: 30%;
+    margin-top: 20px;
 }
 
 .tag {
     border: 1px solid green;
     color: green;
-    font-weight: lighter;
+    font-weight: 100;
     border-radius: 3px;
     padding: 3px 8px;
     margin-right: 10px;
@@ -58,8 +64,6 @@ li {
 .list {
     display: flex;
     flex-direction: column;
-    max-height: 200px;
-    overflow: auto;
 }
 
 .item {

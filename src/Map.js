@@ -25,7 +25,7 @@ const MapComponent = ({ route }) => {
     }, [])
 
     const updateSize = () => {
-        setViewport({ ...viewport, height: window.innerHeight - 300, width: window.innerWidth })
+        setViewport({ ...viewport, height: window.innerHeight, width: window.innerWidth * 0.7 })
     }
 
 
