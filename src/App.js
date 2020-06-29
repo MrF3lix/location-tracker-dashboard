@@ -24,7 +24,7 @@ const App = () => {
 
       setData(values)
       setTrackedRoutes(Object.keys(values))
-      setActiveRoute(Object.keys(values)[0])
+      // setActiveRoute(Object.keys(values)[0])
       setLastUpdate(Date.now())
 
       timeout = setTimeout(() => {
@@ -74,10 +74,7 @@ const App = () => {
           </div>
         </div>
       </div>
-      {
-        activeRoute &&
-        <MapComponent route={data[activeRoute]} />
-      }
+        <MapComponent route={(activeRoute && data) ? data[activeRoute] : []} />
     </>
   )
 }
