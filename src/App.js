@@ -3,7 +3,7 @@ import dayjs from 'dayjs'
 import * as Firebase from './FirebaseHelper'
 import MapComponent from './Map'
 
-const INACTIVE_THRESHOLD = 5000
+const INACTIVE_THRESHOLD = 10000
 let timeout = null
 
 const App = () => {
@@ -66,7 +66,7 @@ const App = () => {
                   </strong>
                   <div className="action">
                     <button onClick={() => setActiveRoute(route)}>Select</button>
-                    <button onClick={() => Firebase.deleteRoute(route)} disabled={true}>Delete</button>
+                    <button onClick={() => Firebase.deleteRoute(route)} disabled={false}>Delete</button>
                   </div>
                 </div>
               )
