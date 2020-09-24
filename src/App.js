@@ -37,7 +37,6 @@ const App = () => {
   return (
     <>
       <div className="left__bar">
-          {/* <h1>Location Tracking Dashboard</h1> */}
           <h2>Tracked Routes</h2>
           {!data ?
             <span>Loading...</span> :
@@ -68,16 +67,12 @@ const App = () => {
                     }
                     {lastUpdate.format('DD/MM/YY - HH:mm:ss')} - {route}
                   </strong>
-                  {/* <div className="action">
-                    <button onClick={() => setActiveRoute(route)}>Select</button>
-                    <button onClick={() => Firebase.deleteRoute(route)} disabled={false}>Delete</button>
-                  </div> */}
                 </div>
               )
             })}
           </div>
       </div>
-        <MapComponent route={(activeRoute && data) ? data[activeRoute] : []} activeRoute={activeRoute} />
+        <MapComponent route={(activeRoute && data) ? data[activeRoute] : []} isActive={true} />
     </>
   )
 }

@@ -4,7 +4,7 @@ import { CanvasOverlay } from 'react-map-gl'
 
 export default class PolylineOverlay extends PureComponent {
   _redraw ({ width, height, ctx, isDragging, project, unproject }) {
-    const { points, color = 'red', lineWidth = 2, renderWhileDragging = true } = this.props
+    const { points, color = '#0029FA', lineWidth = 2, renderWhileDragging = true } = this.props
     ctx.clearRect(0, 0, width, height)
     ctx.globalCompositeOperation = 'lighter'
 

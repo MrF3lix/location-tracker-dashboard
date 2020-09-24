@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import ReactMapGL, { Marker } from 'react-map-gl';
+import { LocationPin } from './Pin';
 import PolylineOverlay from './PolylineOverlay';
 
-const MapComponent = ({ route, activeRoute }) => {
+const MapComponent = ({ route, isActive }) => {
     const [viewport, setViewport] = useState({
         width: '400px',
         height: '400px',
@@ -10,7 +11,6 @@ const MapComponent = ({ route, activeRoute }) => {
         longitude: 4.9254,
         zoom: 11
     });
-
 
     useEffect(() => {
         if (!route || !route.latest) return
@@ -30,6 +30,8 @@ const MapComponent = ({ route, activeRoute }) => {
     }
 
 
+    const latestLocation = route?.latest?.location?.coords
+
     return (
         <div>
             <ReactMapGL
@@ -40,6 +42,13 @@ const MapComponent = ({ route, activeRoute }) => {
                 transitionDuration={100}
             >
                 <PolylineOverlay points={getPointsFromRoute(route)} />
+
+                {latestLocation &&
+                    <Marker key={latestLocation.timestamp} latitude={latestLocation.latitude} longitude={latestLocation.longitude}>
+                        <LocationPin direction={latestLocation.heading} isLive={isActive} />
+                    </Marker>
+                }
+
             </ReactMapGL>
         </div>
     )

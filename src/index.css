@@ -96,3 +96,20 @@ li {
 .action button {
     margin-right: 10px;
 }
+
+
+@keyframes scaleTransition {
+    0% {
+        scale: 0.65;
+        transform-origin: center center;
+    }
+
+    100% {
+        scale: 1;
+        transform-origin: center center;
+    }
+}
+
+#tracking-pin__animation {
+    animation: scaleTransition 1s ease infinite alternate;
+}
