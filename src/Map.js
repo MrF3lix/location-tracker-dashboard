@@ -2,20 +2,21 @@ import React, { useState, useEffect } from 'react'
 import ReactMapGL, { Marker } from 'react-map-gl';
 import PolylineOverlay from './PolylineOverlay';
 
-const MapComponent = ({ route }) => {
+const MapComponent = ({ route, activeRoute }) => {
     const [viewport, setViewport] = useState({
         width: '400px',
         height: '400px',
-        latitude: 52.3,
-        longitude: 5.5,
-        zoom: 6.5
+        latitude: 52.36672,
+        longitude: 4.9254,
+        zoom: 11
     });
+
 
     useEffect(() => {
         if (!route || !route.latest) return
 
         const latestLocation = route.latest.location.coords
-        setViewport({ ...viewport, latitude: latestLocation.latitude, longitude: latestLocation.longitude, zoom: 14 })
+        setViewport({ ...viewport, latitude: latestLocation.latitude, longitude: latestLocation.longitude })
     }, [route])
 
     useEffect(() => {

@@ -54,7 +54,7 @@ const App = () => {
 
               const today = dayjs(new Date());
               if(lastUpdate.isBefore(today.add('-1', 'day'))) {
-                return <React.Fragment />
+                return <React.Fragment key={route} />
               }
 
               const isActive = lastUpdate.add(INACTIVE_THRESHOLD, 'miliseconds').isAfter(dayjs())
@@ -77,7 +77,7 @@ const App = () => {
             })}
           </div>
       </div>
-        <MapComponent route={(activeRoute && data) ? data[activeRoute] : []} />
+        <MapComponent route={(activeRoute && data) ? data[activeRoute] : []} activeRoute={activeRoute} />
     </>
   )
 }
