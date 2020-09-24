@@ -16,10 +16,10 @@ export const init = () => {
 }
 
 export const subscribeToLocationTracking = callback => {
-    var ref = firebase.database().ref('tracking');
+    var ref = firebase.database().ref('ommetje');
     ref.on('value', callback);
 }
 
 export const deleteRoute = key => {
-    firebase.database().ref(`tracking/${key}`).set(null);
+    firebase.database().ref(`ommetje/${key}`).set(null);
 }

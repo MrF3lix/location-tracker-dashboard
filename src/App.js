@@ -22,15 +22,15 @@ const App = () => {
 
       var values = item.val()
 
-
-      setData(values)
-      setTrackedRoutes(Object.keys(values).reverse())
-      setLastUpdate(Date.now())
-
-      timeout = setTimeout(() => {
-        setIsInactive(true)
-      }, INACTIVE_THRESHOLD)
-    
+      if(values !== null) {
+        setData(values)
+        setTrackedRoutes(Object.keys(values).reverse())
+        setLastUpdate(Date.now())
+  
+        timeout = setTimeout(() => {
+          setIsInactive(true)
+        }, INACTIVE_THRESHOLD)
+      }
     })
   }, [])
 
@@ -67,6 +67,10 @@ const App = () => {
                     }
                     {lastUpdate.format('DD/MM/YY - HH:mm:ss')} - {route}
                   </strong>
+                  {/* <div className="action">
+                    <button onClick={() => setActiveRoute(route)}>Select</button>
+                    <button onClick={() => Firebase.deleteRoute(route)} disabled={false}>Delete</button>
+                  </div> */}
                 </div>
               )
             })}
