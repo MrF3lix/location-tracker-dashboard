@@ -38,7 +38,7 @@ const App = () => {
     <>
       <div className="left__bar">
         <div className="inner">
-          <h1>Location Tracking Dashboard</h1>
+          {/* <h1>Location Tracking Dashboard</h1> */}
           <h2>Tracked Routes</h2>
           {!data ?
             <span>Loading...</span> :
@@ -53,6 +53,11 @@ const App = () => {
               const latestLocation = routeData.latest.location
               const lastUpdate = dayjs(latestLocation.timestamp)
 
+              const today = dayjs(new Date());
+              if(lastUpdate.isBefore(today.add('-1', 'day'))) {
+                return <React.Fragment />
+              }
+
               const isActive = lastUpdate.add(INACTIVE_THRESHOLD, 'miliseconds').isAfter(dayjs())
 
               return (
@@ -62,7 +67,7 @@ const App = () => {
                       <span className="tag tag--active">Active</span> :
                       <span className="tag tag--stopped">Stopped</span>
                     }
-                    {lastUpdate.format('HH:mm:ss')} - {route}
+                    {lastUpdate.format('DD/MM/YY - HH:mm:ss')} - {route}
                   </strong>
                   <div className="action">
                     <button onClick={() => setActiveRoute(route)}>Select</button>

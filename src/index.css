@@ -38,7 +38,7 @@ li {
 }
 
 .left__bar {
-    width: 30%;
+    width: 350px;
     margin-top: 20px;
 }
 
@@ -62,6 +62,7 @@ li {
 }
 
 .list {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
 }
