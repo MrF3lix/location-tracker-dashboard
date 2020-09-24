@@ -6,16 +6,16 @@ const MapComponent = ({ route }) => {
     const [viewport, setViewport] = useState({
         width: '400px',
         height: '400px',
-        latitude: 47.460139565049076,
-        longitude: 9.041964910169368,
-        zoom: 12
+        latitude: 52.3,
+        longitude: 5.5,
+        zoom: 6.5
     });
 
     useEffect(() => {
         if (!route || !route.latest) return
 
         const latestLocation = route.latest.location.coords
-        setViewport({ ...viewport, latitude: latestLocation.latitude, longitude: latestLocation.longitude })
+        setViewport({ ...viewport, latitude: latestLocation.latitude, longitude: latestLocation.longitude, zoom: 14 })
     }, [route])
 
     useEffect(() => {

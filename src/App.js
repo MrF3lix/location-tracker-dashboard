@@ -22,9 +22,9 @@ const App = () => {
 
       var values = item.val()
 
+
       setData(values)
-      setTrackedRoutes(Object.keys(values))
-      // setActiveRoute(Object.keys(values)[0])
+      setTrackedRoutes(Object.keys(values).reverse())
       setLastUpdate(Date.now())
 
       timeout = setTimeout(() => {
