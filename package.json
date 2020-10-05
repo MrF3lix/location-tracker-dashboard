@@ -13,7 +13,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-map-gl": "^5.2.7",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "simplify-geojson": "^1.0.4"
   },
   "scripts": {
     "start": "react-scripts start",

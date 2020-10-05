@@ -3,6 +3,8 @@ import ReactMapGL, { Marker } from 'react-map-gl';
 import { LocationPin } from './Pin';
 import PolylineOverlay from './PolylineOverlay';
 
+const simplify = require('simplify-geojson')
+
 const MapComponent = ({ route, isActive }) => {
     const [viewport, setViewport] = useState({
         width: '400px',
@@ -41,7 +43,7 @@ const MapComponent = ({ route, isActive }) => {
                 mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
                 transitionDuration={100}
             >
-                <PolylineOverlay points={getPointsFromRoute(route)} />
+                <PolylineOverlay points={simplifyPoints(getPointsFromRoute(route))} />
 
                 {latestLocation &&
                     <Marker key={latestLocation.timestamp} latitude={latestLocation.latitude} longitude={latestLocation.longitude}>
@@ -64,6 +66,33 @@ const getPointsFromRoute = route => {
             point.location.coords.latitude
         ]
     })
+}
+
+const simplifyPoints = (points) => {
+    if(points.length === 0) {
+        return points
+    }
+    const simplified = simplify(
+        {
+            "type": "FeatureCollection",
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {},
+                    "geometry": {
+                        "type": "LineString",
+                        "coordinates": points
+                    }
+                }
+            ]
+        },
+        0.0001
+    )
+
+    const newPoints = simplified.features[0].geometry.coordinates
+    console.log(`REDUCED FROM ${points.length} to ${newPoints.length}`)
+
+    return newPoints
 }
 
 
