@@ -1,7 +1,16 @@
 {
   "name": "location-tracker-dashboard",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Felix Saaro",
+  "icon": "img/location-tracking-dashboard-logo.png",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/MrF3lix/location-tracker-dashboard.git"
+  },
+  "bugs": {
+      "url": "https://github.com/MrF3lix/location-tracker-dashboard/issues"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",

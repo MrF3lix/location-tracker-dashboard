@@ -67,10 +67,10 @@ const App = () => {
                     }
                     {lastUpdate.format('DD/MM/YY - HH:mm:ss')} - {route}
                   </strong>
-                  {/* <div className="action">
+                  <div className="action">
                     <button onClick={() => setActiveRoute(route)}>Select</button>
                     <button onClick={() => Firebase.deleteRoute(route)} disabled={false}>Delete</button>
-                  </div> */}
+                  </div>
                 </div>
               )
             })}
