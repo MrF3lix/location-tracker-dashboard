@@ -5,11 +5,11 @@
   "author": "Felix Saaro",
   "icon": "img/location-tracking-dashboard-logo.png",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/MrF3lix/location-tracker-dashboard.git"
+    "type": "git",
+    "url": "https://github.com/MrF3lix/location-tracker-dashboard.git"
   },
   "bugs": {
-      "url": "https://github.com/MrF3lix/location-tracker-dashboard/issues"
+    "url": "https://github.com/MrF3lix/location-tracker-dashboard/issues"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -22,7 +22,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-map-gl": "^5.2.7",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^4.0.1",
     "simplify-geojson": "^1.0.4"
   },
   "scripts": {
