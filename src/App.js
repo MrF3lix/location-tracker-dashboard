@@ -60,16 +60,18 @@ const App = () => {
 
               return (
                 <div className={`item ${activeRoute === route ? 'item--active' : 'item--inactive'}`} key={route} onClick={() => setActiveRoute(route)}>
-                  <strong>
+                  <div>
                     {isActive && !isInactive ?
                       <span className="tag tag--active">Active</span> :
                       <span className="tag tag--stopped">Stopped</span>
                     }
+                  </div>
+                  <span>
                     {lastUpdate.format('DD/MM/YY - HH:mm:ss')} - {route}
-                  </strong>
+                  </span>
                   <div className="action">
                     <button onClick={() => setActiveRoute(route)}>Select</button>
-                    <button onClick={() => Firebase.deleteRoute(route)} disabled={false}>Delete</button>
+                    <button onClick={() => Firebase.deleteRoute(route)} disabled={true}>Delete</button>
                   </div>
                 </div>
               )

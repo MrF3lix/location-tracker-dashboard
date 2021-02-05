@@ -1,5 +1,8 @@
 * {
     font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -39,9 +42,14 @@ li {
 
 .left__bar {
     width: 350px;
-    margin-top: 20px;
-    padding: 0 10px;
+    padding: 20px 0;
     height: 100vh;
+    max-height: 100vh;
+    overflow: auto;
+}
+
+.left__bar > h2, .left__bar > span {
+    padding: 0 10px;
 }
 
 .tag {
@@ -74,7 +82,7 @@ li {
 .item {
     cursor: pointer;
     width: 100%;
-    padding: 10px 5px;
+    padding: 10px 10px;
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid lightgray;
@@ -97,6 +105,16 @@ li {
     margin-right: 10px;
 }
 
+button {
+    padding: 3px 8px;
+    background: none;
+    border: 1px solid #BBB;
+    border-radius: 3px;
+}
+
+button:hover {
+
+}
 
 @keyframes scaleTransition {
     0% {
