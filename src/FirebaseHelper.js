@@ -15,11 +15,11 @@ export const init = () => {
     firebase.initializeApp(config);
 }
 
-export const subscribeToLocationTracking = callback => {
-    var ref = firebase.database().ref('tracking');
-    ref.on('value', callback);
+export const subscribeToLocationTracking = (callback, area) => {
+    let ref = firebase.database().ref(area);
+    ref.on('value', item => callback(item));
 }
 
-export const deleteRoute = key => {
+export const deleteRoute = (key) => {
     firebase.database().ref(`tracking/${key}`).set(null);
 }
